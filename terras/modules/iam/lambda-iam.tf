@@ -23,7 +23,7 @@ resource "aws_lambda_function" "lambda" {
   handler = "ExportProcess"
   runtime = "java11"
   memory_size = "1024"
-
+  timeout = 900
 depends_on = [
     aws_iam_role_policy_attachment.lambdalogs,
     aws_cloudwatch_log_group.example,
